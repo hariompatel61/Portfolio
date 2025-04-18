@@ -392,14 +392,15 @@
 
             <div class="wrapper">
 
-              <form action="mailto:hariompatel3369@gmail.com" class="contact-form">
-
+              <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="21a2d93f-4d8d-4856-a263-4d58a98f06a4">
+                <!-- Optional: redirect to thank you page -->
+                <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html"> -->
+                <!-- Form Fields -->
                 <input type="text" name="name" placeholder="Name" required class="contact-input">
-
                 <input type="email" name="email" placeholder="Email" required class="contact-input">
-
                 <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
-
                 <button type="submit" class="btn-submit">Submit Message</button>
 
               </form>
