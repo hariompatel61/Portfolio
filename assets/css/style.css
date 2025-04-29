@@ -1,199 +1,233 @@
 /* Add these new styles to your existing CSS */
 
-/* Theme toggle */
-.theme-toggle-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 2rem;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  padding: 5px;
+/* Animations */
+[data-aos] {
+  transition-property: transform, opacity;
 }
 
-.dark-icon {
-  display: none;
-}
-
-.light-theme .dark-icon {
-  display: block;
-}
-
-.light-theme .light-icon {
-  display: none;
-}
-
-/* Light theme variables */
-.light-theme {
-  --space-cadet: hsl(0, 0%, 95%);
-  --white: hsl(0, 0%, 20%);
-  --cadet-blue-crayola: hsl(240, 10%, 30%);
-  --shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Game section */
-.game {
-  background-color: var(--independence);
-  padding-block: var(--section-padding);
-}
-
-.game-container {
+/* Social Links Improvements */
+.social-links {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.social-link {
+  display: flex;
   align-items: center;
-  gap: 30px;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 10px;
+  color: var(--white);
+  padding: 8px 15px;
+  border-radius: var(--radius-5);
+  transition: var(--transition-2);
+  width: fit-content;
+}
+
+.social-link ion-icon {
+  font-size: 2rem;
+}
+
+.social-link.github {
+  background-color: #333;
+}
+
+.social-link.linkedin {
+  background-color: #0A66C2;
+}
+
+.social-link.twitter {
+  background-color: #1DA1F2;
+}
+
+.social-link.leetcode {
+  background-color: #FFA116;
+}
+
+.social-link:hover {
+  transform: translateX(5px);
+  opacity: 0.9;
+}
+
+/* Game Section Improvements */
+.game-container {
+  max-width: 600px;
+  background-color: var(--midnight-blue);
+  padding: 30px;
+  border-radius: var(--radius-20);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--space-cadet);
+  border-radius: var(--radius-10);
+}
+
+.current-player, .game-message {
+  color: var(--white);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-5);
+}
+
+.current-player span {
+  color: var(--orange-soda);
 }
 
 .game-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  width: 100%;
-  max-width: 300px;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .cell {
   aspect-ratio: 1/1;
-  background-color: var(--white);
+  background-color: var(--space-cadet);
   border-radius: var(--radius-10);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
-  color: var(--space-cadet);
+  font-size: 5rem;
   cursor: pointer;
   transition: var(--transition-2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cell:hover {
-  background-color: var(--glaucous);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.game-info {
-  text-align: center;
-  width: 100%;
+.cell.x {
+  color: var(--vivid-sky-blue);
 }
 
-.winning-message {
-  font-size: var(--fs-4);
-  color: var(--orange-soda);
-  margin-bottom: 20px;
-  font-weight: var(--fw-600);
-  min-height: 2em;
+.cell.o {
+  color: var(--fiery-rose);
 }
 
-.restart-button {
-  background-color: var(--orange-soda);
-  color: var(--white);
-  padding: 10px 25px;
-  border-radius: var(--radius-5);
-  font-weight: var(--fw-600);
-  margin-bottom: 20px;
-  transition: var(--transition-2);
-}
-
-.restart-button:hover {
-  background-color: var(--white);
-  color: var(--orange-soda);
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .score-board {
   display: flex;
   justify-content: space-between;
-  background-color: var(--midnight-blue);
-  padding: 15px;
+  gap: 15px;
+}
+
+.score-box {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
   border-radius: var(--radius-10);
+  background-color: var(--space-cadet);
 }
 
-.score-player, .score-ties {
-  color: var(--white);
-  font-weight: var(--fw-600);
-}
-
-/* Project cards enhancements */
-.project-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-.github-link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--white);
-}
-
-.github-link ion-icon {
-  color: var(--white);
-  font-size: 1.6rem;
-}
-
-.tech-stack {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 10px 0;
-}
-
-.tech-stack span {
-  background-color: var(--midnight-blue);
-  color: var(--white);
-  padding: 5px 10px;
-  border-radius: var(--radius-5);
+.score-label {
+  display: block;
   font-size: 1.2rem;
-}
-
-.card-description {
-  margin: 10px 0;
   color: var(--cadet-blue-crayola);
+  margin-bottom: 5px;
 }
 
-/* Social links */
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.social-icons a {
-  color: var(--white);
+.score-value {
+  display: block;
   font-size: 2rem;
-  transition: var(--transition-1);
+  font-weight: var(--fw-700);
+  color: var(--white);
 }
 
-.social-icons a:hover {
-  color: var(--orange-soda);
+.x-score .score-value {
+  color: var(--vivid-sky-blue);
 }
 
-/* Quote of the day */
-.quote-of-the-day {
-  margin-top: 30px;
-  font-style: italic;
-  color: var(--cadet-blue-crayola);
-  border-left: 3px solid var(--orange-soda);
-  padding-left: 15px;
+.o-score .score-value {
+  color: var(--fiery-rose);
 }
 
-/* Resume download button */
-.resume-download {
-  margin-top: 30px;
+/* Project Card Hover Effects */
+.portfolio-card {
+  transition: var(--transition-2);
+  transform-style: preserve-3d;
 }
 
-.resume-download ion-icon {
-  margin-right: 5px;
+.portfolio-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive adjustments */
+.portfolio-card .card-content {
+  transition: var(--transition-2);
+  opacity: 0;
+}
+
+.portfolio-card:hover .card-content {
+  opacity: 1;
+}
+
+/* Button Hover Effects */
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--orange-soda);
+  border-radius: 50px;
+  z-index: -2;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--klein-blue);
+  transition: var(--transition-2);
+  border-radius: 50px;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .game-container {
-    padding: 0 20px;
+    padding: 20px;
+  }
+  
+  .cell {
+    font-size: 3.5rem;
   }
   
   .score-board {
     flex-direction: column;
-    gap: 10px;
+  }
+  
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .social-link {
+    flex: 1 0 calc(50% - 10px);
   }
 }
