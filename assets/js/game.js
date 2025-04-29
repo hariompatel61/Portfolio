@@ -1,4 +1,3 @@
-// Tic Tac Toe Game Logic
 document.addEventListener('DOMContentLoaded', () => {
   const X_CLASS = 'x';
   const O_CLASS = 'o';
@@ -9,12 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
   
   const cellElements = document.querySelectorAll('[data-cell]');
-  const board = document.querySelector('.game-board');
-  const winningMessageElement = document.querySelector('[data-winning-message-text]');
-  const restartButton = document.querySelector('[data-restart-button]');
-  const xScoreElement = document.querySelector('.score-player:nth-child(1) span');
-  const oScoreElement = document.querySelector('.score-player:nth-child(2) span');
-  const tiesScoreElement = document.querySelector('.score-ties span');
+  const board = document.getElementById('game-board');
+  const currentPlayerElement = document.getElementById('current-player');
+  const gameMessageElement = document.getElementById('game-message');
+  const restartButton = document.getElementById('restart-button');
+  const xScoreElement = document.getElementById('x-score');
+  const oScoreElement = document.getElementById('o-score');
+  const tiesScoreElement = document.getElementById('ties-score');
   
   let oTurn;
   let xScore = 0;
@@ -27,14 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function startGame() {
     oTurn = false;
+    currentPlayerElement.textContent = 'X';
+    currentPlayerElement.style.color = 'var(--vivid-sky-blue)';
+    gameMessageElement.textContent = '';
+    
     cellElements.forEach(cell => {
       cell.classList.remove(X_CLASS);
       cell.classList.remove(O_CLASS);
+      cell.innerHTML = '';
       cell.removeEventListener('click', handleClick);
       cell.addEventListener('click', handleClick, { once: true });
     });
+    
     setBoardHoverClass();
-    winningMessageElement.textContent = '';
   }
   
   function handleClick(e) {
@@ -44,53 +49,35 @@ document.addEventListener('DOMContentLoaded', () => {
     placeMark(cell, currentClass);
     
     if (checkWin(currentClass)) {
-      endGame(false);
+      endGame(false, currentClass);
     } else if (isDraw()) {
       endGame(true);
     } else {
       swapTurns();
       setBoardHoverClass();
+      updateCurrentPlayerDisplay();
     }
-  }
-  
-  function endGame(draw) {
-    if (draw) {
-      ties++;
-      tiesScoreElement.textContent = ties;
-      winningMessageElement.textContent = 'Game ended in a draw!';
-    } else {
-      if (oTurn) {
-        oScore++;
-        oScoreElement.textContent = oScore;
-        winningMessageElement.textContent = 'O Wins!';
-      } else {
-        xScore++;
-        xScoreElement.textContent = xScore;
-        winningMessageElement.textContent = 'X Wins!';
-      }
-    }
-  }
-  
-  function isDraw() {
-    return [...cellElements].every(cell => {
-      return cell.classList.contains(X_CLASS) || cell.classList.contains(O_CLASS);
-    });
   }
   
   function placeMark(cell, currentClass) {
     cell.classList.add(currentClass);
-    cell.innerHTML = currentClass === X_CLASS ? 
-      '<ion-icon name="close-outline"></ion-icon>' : 
-      '<ion-icon name="ellipse-outline"></ion-icon>';
+    const iconName = currentClass === X_CLASS ? 'close-outline' : 'ellipse-outline';
+    cell.innerHTML = `<ion-icon name="${iconName}"></ion-icon>`;
   }
   
   function swapTurns() {
     oTurn = !oTurn;
   }
   
+  function updateCurrentPlayerDisplay() {
+    currentPlayerElement.textContent = oTurn ? 'O' : 'X';
+    currentPlayerElement.style.color = oTurn ? 'var(--fiery-rose)' : 'var(--vivid-sky-blue)';
+  }
+  
   function setBoardHoverClass() {
     board.classList.remove(X_CLASS);
     board.classList.remove(O_CLASS);
+    
     if (oTurn) {
       board.classList.add(O_CLASS);
     } else {
@@ -105,4 +92,61 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  
+  function isDraw() {
+    return [...cellElements].every(cell => {
+      return cell.classList.contains(X_CLASS) || cell.classList.contains(O_CLASS);
+    });
+  }
+  
+  function endGame(draw, winner) {
+    if (draw) {
+      gameMessageElement.textContent = 'Game ended in a draw!';
+      ties++;
+      tiesScoreElement.textContent = ties;
+    } else {
+      const winnerText = winner === X_CLASS ? 'X' : 'O';
+      gameMessageElement.textContent = `${winnerText} Wins!`;
+      gameMessageElement.style.color = winner === X_CLASS ? 'var(--vivid-sky-blue)' : 'var(--fiery-rose)';
+      
+      if (winner === X_CLASS) {
+        xScore++;
+        xScoreElement.textContent = xScore;
+      } else {
+        oScore++;
+        oScoreElement.textContent = oScore;
+      }
+    }
+    
+    // Disable further clicks
+    cellElements.forEach(cell => {
+      cell.removeEventListener('click', handleClick);
+    });
+  }
+  
+  // Save scores to localStorage
+  function saveScores() {
+    localStorage.setItem('ticTacToeScores', JSON.stringify({
+      xScore,
+      oScore,
+      ties
+    }));
+  }
+  
+  // Load scores from localStorage
+  function loadScores() {
+    const scores = JSON.parse(localStorage.getItem('ticTacToeScores'));
+    if (scores) {
+      xScore = scores.xScore || 0;
+      oScore = scores.oScore || 0;
+      ties = scores.ties || 0;
+      
+      xScoreElement.textContent = xScore;
+      oScoreElement.textContent = oScore;
+      tiesScoreElement.textContent = ties;
+    }
+  }
+  
+  // Initialize by loading scores
+  loadScores();
 });
