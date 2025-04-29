@@ -5,39 +5,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hariom Patel</title>
+  <title>Hari Om Patel | Full Stack Developer</title>
 
-  <!-- 
-    - favicon
-  -->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-  <!-- 
-    - custom css link
-  -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  <!-- 
-    - google font link
-  -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body id="top">
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!-- Header -->
   <header class="header" data-header>
     <div class="container">
-
       <a href="#">
-        <h1 class="logo">Portfolio</h1>
+        <h1 class="logo">Hari Om Patel</h1>
       </a>
 
       <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
@@ -47,468 +38,264 @@
 
       <nav class="navbar container">
         <ul class="navbar-list">
-
+          <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
+          <li><a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a></li>
+          <li><a href="#skills" class="navbar-link" data-nav-link>Skills</a></li>
+          <li><a href="#game" class="navbar-link" data-nav-link>Play Game</a></li>
+          <li><a href="#contact" class="navbar-link" data-nav-link>Contact</a></li>
           <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            <button class="theme-toggle-btn" aria-label="Toggle theme">
+              <span class="icon light-icon"><ion-icon name="sunny-outline"></ion-icon></span>
+              <span class="icon dark-icon"><ion-icon name="moon-outline"></ion-icon></span>
+            </button>
           </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>About</a>
-          </li>
-
-          <li>
-            <a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
-          </li>
-
-          <li>
-            <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
-          </li>
-
-          <li>
-            <a href="https://drive.google.com/file/d/1mR6Ipta0BJEDDd9mpih4DlTAPLrbpOK3/view?usp=sharing" class="btn btn-primary">Download CV</a>
-          </li>
-
         </ul>
       </nav>
-
     </div>
   </header>
 
-
-
-
-
   <main>
     <article>
-
-      <!-- 
-        - #banner
-      -->
-
+      <!-- Hero Section -->
       <section class="hero" id="home">
         <div class="container">
-
           <div class="hero-banner">
-
-            <img src="./assets/images/hero-banner.jpg" width="800" height="864" loading="lazy" alt="Ethan's Photo"
-              class="img-cover">
-            <div class="elem elem-3">
-              <ion-icon name="trophy"></ion-icon>
-            </div>
+            <img src="./assets/images/hero-banner.jpg" width="800" height="864" loading="lazy" alt="Hari Om's Photo" class="img-cover">
           </div>
 
           <div class="hero-content">
-
             <h2 class="hero-title">
               <span>Hello I'm</span>
-              <strong>Hariom Patel</strong> Web Developer | Python Developer | Continuous Learner
+              <strong>Hari Om Patel</strong> Full Stack Developer | Problem Solver | Continuous Learner
             </h2>
 
             <p class="hero-text">
-              Welcome to my portfolio! I'm Hariom Patel, an aspiring web developer with a strong enthusiasm for creating dynamic and visually appealing websites. 
+              Building smart solutions with passion and creativity. Specializing in web development with Python, JavaScript, and modern frameworks.
             </p>
 
             <div class="btn-group">
-              <a href="#contact" class="btn btn-primary blue">Get a Quote</a>
-
+              <a href="#contact" class="btn btn-primary blue">Hire Me</a>
               <a href="#about" class="btn">About Me</a>
             </div>
 
+            <div class="quote-of-the-day">
+              <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+            </div>
           </div>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
-
+      <!-- About Section -->
       <section class="section about" id="about">
         <div class="container">
-
           <figure class="about-banner">
-
-            <img src="./assets/images/about-banner.jpg" width="800" height="652" loading="lazy" alt="Ethan's Photo"
-              class="img-cover">
-
-            <img src="./assets/images/absolute-image.jpg" width="800" height="717" loading="lazy" alt="Ethan's Photo"
-              class="abs-img">
-
-            <div class="abs-icon abs-icon-1">
-              <ion-icon name="logo-css3"></ion-icon>
-            </div>
-
-            <div class="abs-icon abs-icon-2">
-              <ion-icon name="logo-javascript"></ion-icon>
-            </div>
-
-            <div class="abs-icon abs-icon-3">
-              <ion-icon name="logo-python"></ion-icon>
-            </div>
-
+            <img src="./assets/images/about-banner.jpg" width="800" height="652" loading="lazy" alt="Hari Om's Photo" class="img-cover">
+            <img src="./assets/images/absolute-image.jpg" width="800" height="717" loading="lazy" alt="Hari Om's Photo" class="abs-img">
+            <div class="abs-icon abs-icon-1"><ion-icon name="logo-css3"></ion-icon></div>
+            <div class="abs-icon abs-icon-2"><ion-icon name="logo-javascript"></ion-icon></div>
+            <div class="abs-icon abs-icon-3"><ion-icon name="logo-python"></ion-icon></div>
           </figure>
           
-
           <div class="about-content">
-
-            <p class="section-subtitle">I'm a Developer</p>
-
-            <h2 class="h2 section-title">I Develop Web Application that Help People</h2>
-
+            <p class="section-subtitle">About Me</p>
+            <h2 class="h2 section-title">Full Stack Developer</h2>
             <p class="section-text">
-              Hello, I'm an aspiring web developer with a strong passion for coding and creating dynamic websites. Although I may not have professional experience yet, I am dedicated to honing my skills and learning new technologies. I thrive on problem-solving and love bringing ideas to life through clean and efficient code. With a focus on front-end development and user experience, I aim to build visually appealing and intuitive websites. I'm excited to connect, collaborate, and contribute to the ever-evolving world of web development.
+              I'm a B.Tech Computer Science student with a passion for building web applications. 
+              I specialize in Python and JavaScript development, with experience in both frontend 
+              and backend technologies.
             </p>
-
             <p class="section-text">
-              Let's embark on this coding journey together and create impactful online experiences!
+              My journey in programming started with solving real-world problems through code. 
+              I believe in continuous learning and staying updated with the latest technologies.
             </p>
-
-            <a href="#portfolio" class="btn btn-primary blue">View Portfolio</a>
-
+            
+            <div class="resume-download">
+              <a href="https://drive.google.com/file/d/1mR6Ipta0BJEDDd9mpih4DlTAPLrbpOK3/view?usp=sharing" class="btn btn-primary blue">
+                <ion-icon name="download-outline"></ion-icon> Download Resume
+              </a>
+            </div>
           </div>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #PORTFOLIO
-      -->
-
+      <!-- Portfolio Section -->
       <section class="section portfolio" id="portfolio">
         <div class="container">
-
           <p class="section-subtitle">Portfolio</p>
-
-          <h2 class="h2 section-title">My Amazing Works</h2>
-
-          <p class="section-text">
-            
-          </p>
-
+          <h2 class="h2 section-title">My Projects</h2>
+          
           <ul class="portfolio-list">
-
             <li>
-              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-1.jpg')">
+              <div class="portfolio-card" style="background-image: url('./assets/images/portfolio-1.jpg')">
                 <div class="card-content">
-
-                  <p class="card-subtitle">Haricodez</p>
-
+                  <p class="card-subtitle">Web Development</p>
                   <h3 class="h3 card-title">Online Voting System</h3>
-
-                  <span class="btn-link">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
+                  <p class="card-description">A secure online voting platform built with Python and Django.</p>
+                  <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>PostgreSQL</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" class="btn-link">
+                      <span>View Project</span>
+                      <ion-icon name="arrow-forward"></ion-icon>
+                    </a>
+                    <a href="#" class="btn-link github-link">
+                      <ion-icon name="logo-github"></ion-icon>
+                      <span>Code</span>
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </div>
             </li>
-
-            <li>
-              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
-                <div class="card-content">
-
-                  <p class="card-subtitle">Haricodez</p>
-
-                  <h3 class="h3 card-title">Landing Page</h3>
-
-                  <span class="btn-link">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-3.jpg')">
-                <div class="card-content">
-
-                  <p class="card-subtitle">Haricodez</p>
-
-                  <h3 class="h3 card-title">Web3 || Blockchain</h3>
-
-                  <span class="btn-link">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-4.jpg')">
-                <div class="card-content">
-
-                  <p class="card-subtitle">Details</p>
-
-                  <h3 class="h3 card-title">Web Application </h3>
-
-                  <span class="btn-link">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
-                </div>
-              </a>
-            </li>
-
+            
+            <!-- More project cards would go here -->
           </ul>
-
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #SKILLS
-      -->
-
+      <!-- Skills Section -->
       <section class="section skills" id="skills">
         <div class="container">
-
           <p class="section-subtitle">My Skills</p>
-
-          <h2 class="h2 section-title">I Develop Skills Regularly</h2>
-
-          <p class="section-text">
-          </p>
-
+          <h2 class="h2 section-title">Technical Expertise</h2>
+          
           <ul class="skills-list">
-
             <li class="skills-item">
               <div class="wrapper" style="width: 95%">
-                <h3 class=" skills-title">Python</h3>
-
+                <h3 class="skills-title">Python</h3>
                 <data class="skills-data" value="95">95%</data>
               </div>
-
               <div class="skills-progress-box">
                 <div class="skills-progress" style="width: 95%"></div>
               </div>
             </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 75%">
-                <h3 class="skills-title">HTML</h3>
-
-                <data class="skills-data" value="90">90%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 90%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 90%">
-                <h3 class="skills-title">CSS</h3>
-
-                <data class="skills-data" value="90">90%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 90%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 70%">
-                <h3 class="skills-title">C++</h3>
-
-                <data class="skills-data" value="40">40%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 40%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 80%">
-                <h3 class="skills-title">PHP</h3>
-
-                <data class="skills-data" value="80">80%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 80%"></div>
-              </div>
-            </li>
-
-            <li class="skills-item">
-              <div class="wrapper" style="width: 75%">
-                <h3 class="skills-title">JavaScript</h3>
-
-                <data class="skills-data" value="75">75%</data>
-              </div>
-
-              <div class="skills-progress-box">
-                <div class="skills-progress" style="width: 75%"></div>
-              </div>
-            </li>
-
+            <!-- More skills would go here -->
           </ul>
-
         </div>
       </section>
 
+      <!-- Game Section -->
+      <section class="section game" id="game">
+        <div class="container">
+          <p class="section-subtitle">Have Fun</p>
+          <h2 class="h2 section-title">Play Tic Tac Toe</h2>
+          
+          <div class="game-container">
+            <div class="game-board">
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+              <div class="cell" data-cell></div>
+            </div>
+            
+            <div class="game-info">
+              <div class="winning-message" data-winning-message-text></div>
+              <button class="restart-button" data-restart-button>Restart Game</button>
+              <div class="score-board">
+                <div class="score-player">Player X: <span>0</span></div>
+                <div class="score-player">Player O: <span>0</span></div>
+                <div class="score-ties">Ties: <span>0</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-
-
-      <!-- 
-        - #CONTACT
-      -->
-
+      <!-- Contact Section -->
       <section class="section contact" id="contact">
         <div class="container">
-
           <div class="contact-card">
-
-            <p class="card-subtitle">Don't be shy</p>
-
-            <h2 class="h2 section-title">Drop Me a Message</h2>
-
+            <p class="card-subtitle">Get In Touch</p>
+            <h2 class="h2 section-title">Contact Me</h2>
+            
             <div class="wrapper">
-
-              <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <!-- Web3Forms Access Key -->
-                <input type="hidden" name="access_key" value="21a2d93f-4d8d-4856-a263-4d58a98f06a4">
-                <!-- Optional: redirect to thank you page -->
-                <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html"> -->
-                <!-- Form Fields -->
+              <form id="contact-form" class="contact-form">
                 <input type="text" name="name" placeholder="Name" required class="contact-input">
                 <input type="email" name="email" placeholder="Email" required class="contact-input">
+                <input type="text" name="subject" placeholder="Subject" required class="contact-input">
                 <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
-                <button type="submit" class="btn-submit">Submit Message</button>
-
+                <button type="submit" class="btn-submit">Send Message</button>
               </form>
-
+              
               <ul class="contact-list">
-
                 <li class="contact-item">
-
-                  <div class="contact-icon">
-                    <ion-icon name="location"></ion-icon>
-                  </div>
-
+                  <div class="contact-icon"><ion-icon name="location"></ion-icon></div>
                   <div>
                     <h3 class="contact-item-title">Address</h3>
-
-                    <address class="contact-item-link">
-                      Greater Noida, India
-                    </address>
+                    <address class="contact-item-link">Greater Noida, India</address>
                   </div>
-
                 </li>
-
+                
                 <li class="contact-item">
-
-                  <div class="contact-icon">
-                    <ion-icon name="mail"></ion-icon>
-                  </div>
-
+                  <div class="contact-icon"><ion-icon name="mail"></ion-icon></div>
                   <div>
                     <h3 class="contact-item-title">Email</h3>
-
                     <a href="mailto:hariompatel3369@gmail.com" class="contact-item-link">hariompatel3369@gmail.com</a>
                   </div>
-
                 </li>
-
+                
                 <li class="contact-item">
-
-                  <div class="contact-icon">
-                    <ion-icon name="call"></ion-icon>
-                  </div>
-
+                  <div class="contact-icon"><ion-icon name="call"></ion-icon></div>
                   <div>
                     <h3 class="contact-item-title">Phone</h3>
-
-                    <a href="tel:+1234567890" class="contact-item-link">+916307643369</a>
+                    <a href="tel:+916307643369" class="contact-item-link">+91 6307643369</a>
                   </div>
-
                 </li>
-
+                
+                <li class="contact-item social-links">
+                  <div class="contact-icon"><ion-icon name="share-social"></ion-icon></div>
+                  <div>
+                    <h3 class="contact-item-title">Social</h3>
+                    <div class="social-icons">
+                      <a href="https://github.com/hariompatel61" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+                      <a href="https://linkedin.com/in/hariompatel069" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+                      <a href="https://twitter.com/" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+                    </div>
+                  </div>
+                </li>
               </ul>
-
             </div>
-
           </div>
-
         </div>
       </section>
+    </article>
+  </main>
 
-  <!-- 
-    - #FOOTER
-  -->
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-
-      <p class="copyright">
-        &copy; 2023 <a href="#" class="copyright-link">#</a>. All Rights Reseverd
-      </p>
-
-      <ul class="footer-list">
-        <li>
-          <a href="#" class="footer-link">Terms & Condition</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Privacy Policy</a>
-        </li>
-      </ul>
-
+      <div class="footer-content">
+        <p class="copyright">
+          &copy; 2023 <a href="#" class="copyright-link">Hari Om Patel</a>. All Rights Reserved
+        </p>
+        
+        <ul class="footer-list">
+          <li><a href="#" class="footer-link">Terms & Condition</a></li>
+          <li><a href="#" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        
+        <div class="back-to-top-wrapper">
+          <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-
-
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
+  <!-- Custom JS -->
   <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
+  <script src="./assets/js/game.js"></script>
+  <script src="./assets/js/contact.js"></script>
+  
+  <!-- Ion Icons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
-
 </html>
