@@ -1,46 +1,35 @@
-/* Add these new styles to your existing CSS */
-
-/* Animations */
-[data-aos] {
-  transition-property: transform, opacity;
+:root {
+  --midnight-blue: #191970;
+  --space-cadet: #2B2D42;
+  --vivid-sky-blue: #00DDEB;
+  --fiery-rose: #FF6666;
+  --orange-soda: #F85C50;
 }
 
-/* Social Links Improvements */
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+body {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
+/* Portfolio Card Hover Effects */
+.portfolio-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Links */
 .social-link {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--white);
-  padding: 8px 15px;
-  border-radius: var(--radius-5);
-  transition: var(--transition-2);
-  width: fit-content;
-}
-
-.social-link ion-icon {
-  font-size: 2rem;
-}
-
-.social-link.github {
-  background-color: #333;
-}
-
-.social-link.linkedin {
-  background-color: #0A66C2;
-}
-
-.social-link.twitter {
-  background-color: #1DA1F2;
-}
-
-.social-link.leetcode {
-  background-color: #FFA116;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .social-link:hover {
@@ -48,58 +37,65 @@
   opacity: 0.9;
 }
 
-/* Game Section Improvements */
+.social-link.github { background-color: #333; }
+.social-link.linkedin { background-color: #0A66C2; }
+.social-link.twitter { background-color: #1DA1F2; }
+.social-link.leetcode { background-color: #FFA116; }
+
+.social-link ion-icon {
+  font-size: 1.5rem;
+}
+
+/* Game Section */
 .game-container {
-  max-width: 600px;
-  background-color: var(--midnight-blue);
-  padding: 30px;
-  border-radius: var(--radius-20);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--space-cadet);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .game-status {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: var(--space-cadet);
-  border-radius: var(--radius-10);
-}
-
-.current-player, .game-message {
-  color: var(--white);
-  font-weight: var(--fw-600);
-  font-size: var(--fs-5);
+  margin-bottom: 16px;
+  color: white;
+  font-weight: 600;
 }
 
 .current-player span {
   color: var(--orange-soda);
 }
 
+.game-message {
+  color: white;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .cell {
-  aspect-ratio: 1/1;
-  background-color: var(--space-cadet);
-  border-radius: var(--radius-10);
+  width: 100px;
+  height: 100px;
+  background: var(--midnight-blue);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 5rem;
+  font-size: 3rem;
   cursor: pointer;
-  transition: var(--transition-2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cell:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .cell.x {
@@ -110,124 +106,97 @@
   color: var(--fiery-rose);
 }
 
-.game-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .score-board {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
 .score-box {
-  flex: 1;
-  text-align: center;
+  background: var(--midnight-blue);
   padding: 10px;
-  border-radius: var(--radius-10);
-  background-color: var(--space-cadet);
+  border-radius: 8px;
+  text-align: center;
+  color: white;
 }
 
 .score-label {
   display: block;
-  font-size: 1.2rem;
-  color: var(--cadet-blue-crayola);
-  margin-bottom: 5px;
+  font-size: 0.875rem;
+  color: #A3BFFA;
 }
 
 .score-value {
   display: block;
-  font-size: 2rem;
-  font-weight: var(--fw-700);
-  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.x-score .score-value {
-  color: var(--vivid-sky-blue);
-}
+.x-score .score-value { color: var(--vivid-sky-blue); }
+.o-score .score-value { color: var(--fiery-rose); }
 
-.o-score .score-value {
-  color: var(--fiery-rose);
-}
-
-/* Project Card Hover Effects */
-.portfolio-card {
-  transition: var(--transition-2);
-  transform-style: preserve-3d;
-}
-
-.portfolio-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.portfolio-card .card-content {
-  transition: var(--transition-2);
-  opacity: 0;
-}
-
-.portfolio-card:hover .card-content {
-  opacity: 1;
-}
-
-/* Button Hover Effects */
+/* Buttons */
 .btn {
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
-.btn::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--orange-soda);
-  border-radius: 50px;
-  z-index: -2;
+.btn:hover {
+  background-color: #2563EB;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: var(--klein-blue);
-  transition: var(--transition-2);
-  border-radius: 50px;
-  z-index: -1;
+/* Form Inputs */
+input, textarea {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.btn:hover::before {
-  width: 100%;
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--orange-soda);
 }
 
-/* Responsive Adjustments */
+/* Dark Mode */
+.dark .bg-gray-100 { background-color: #1F2937; }
+.dark .text-gray-900 { color: #F3F4F6; }
+.dark .bg-white { background-color: #374151; }
+.dark .text-gray-600 { color: #D1D5DB; }
+.dark .bg-gray-200 { background-color: #4B5563; }
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .game-container {
-    padding: 20px;
+    max-width: 300px;
   }
-  
+
   .cell {
-    font-size: 3.5rem;
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
   }
-  
-  .score-board {
-    flex-direction: column;
+
+  .portfolio-list {
+    grid-template-columns: 1fr;
   }
-  
+
   .social-links {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .social-link {
-    flex: 1 0 calc(50% - 10px);
+
+  .score-board {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  nav .space-x-4 {
+    font-size: 0.875rem;
+  }
+
+  .game-status {
+    flex-direction: column;
+    gap: 8px;
   }
 }
